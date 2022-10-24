@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1> Ejercicios PHP Pablo Campuzano </h1>
-    <a href="formularios.php">Ir a página de formularios</a>
+    <a href="../index.php">Ir a la página principal</a>
     <h2> Ejercicios Arrays 1 dimensión </h2>
     <?php
     echo "<h3> Ejercicio 1 </h3>";

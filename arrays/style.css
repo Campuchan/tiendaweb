@@ -1,0 +1,16 @@
+body {
+    background-color: #E2A0E2;
+}
+
+table{
+    border-collapse:collapse;
+    border: 1px;
+}
+form{
+    background-color:aqua;}
+
+.formularioemail {
+    background-color: yellow; 
+  height: 200px;
+  width: 200px;
+}

@@ -8,41 +8,45 @@
     <link rel="icon" href="icono.ico">
     <link rel="stylesheet" type="text/css" href="style.css?<?php echo time(); ?>" />
     <!-- echo time() es para que no haga cache del css -->
+    <?php session_start();?>
 </head>
 <body>
     <h1>Ejercicios PHP</h1>
     <a href="ejercicios.php">Para ir a ejercicios de arrays</a>
-    <h2>Hola <?php 
-    if (isset($_POST["name"]) && isset($_POST["surname"])){
-    echo $_POST["name"]. " " . $_POST["surname"];} ?></h1>
-    <h3> ¿Cómo te llamas? </h3>
+    <?php if (!isset($_SESSION['contador'])){
+        echo "Bienvenido por primera vez";
+        $_SESSION['contador']=1;
+    }else{
+        $_SESSION['contador']++;
+        echo "Nos has visitado " . $_SESSION['contador'] . " veces.";}?>
     <div class="formularionombre">
+    <img src=img/skeleton-dancing.gif>
     <form action="index.php" method="post"> 
         <label for="name"> Nombre:
-            <input type="text" name="name"> </label> <br>
+            <input type="text" name="name" required> </label> <br>
         <label for="surname"> Apellidos:
-            <input type="text" name="surname"> </label> <br>
+            <input type="text" name="surname" required> </label> <br>
         <label for="genero"> Género: <br>
             <label> Masculino:
-            <input type="radio" value="Masculino" name="genero"> </label> <br>
+            <input type="radio" value="Masculino" name="genero" required> </label> <br>
             <label> Femenino:
-            <input type="radio" value="femenino" name="genero"> </label> <br>
+            <input type="radio" value="femenino" name="genero" required> </label> <br>
             <label> Otro:
-            <input type="radio" id="otro" name="genero">
-            <input type="text" id="otrotext" name="genero"> </label> <br>
-        </label>
-        <label for="ciudad"> Ciudad: 
-            <select id="ciudad" name="ciudad">
-                <option value="ninguna"> </option>
-                <option value="Palencia">Palencia</option>
-                <option value="Alguna peor">Alguna peor</option>
-                <option value="Madrid (aun peor)">Madrid (aun peor) </option>
+            <input type="radio" id="otro" name="genero" required>
+            <input type="text" id="otrotext" name="generotext"> </label> <br>
         </label>
         <label for="nacimiento"> Nacimiento:
-            <input type="date" name="nacimiento"> </label> <br>
+            <input type="date" name="nacimiento" required> </label> <br>
+        <label for="ciudad"> Ciudad: 
+            <select id="ciudad" name="ciudad" required>
+                <option value="" selected disabled style="display:none;">Elija </option>
+                <option value="Palencia" >Palencia</option>
+                <option value="Alguna peor" >Alguna peor</option>
+                <option value="Madrid (aun peor)" >Madrid (aun peor) </option>
+            </select>
+        </label><br>
         <input type="submit" value="Enviar">
     </form>
-    <img src="img\skeleton-dancing.gif">
     <p>feliz halloween gente</p>
     </div>
     <div class="resultados">
@@ -50,6 +54,8 @@
         <p> Su género es <?php if($_POST["genero"]=="Otro"){
             echo $_POST["otrotexto"];}
             echo $_POST["genero"];?>
+        <p> Nació el día <?php echo $_POST["nacimiento"]; ?>
+        <p> Vive en <?php echo $_POST["ciudad"]; ?>
     </div>
 </body>
 </html>

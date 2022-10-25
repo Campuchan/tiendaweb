@@ -9,11 +9,12 @@ table{
 
 .formularionombre {
     margin: auto;
-  width: 20%;
-  border: 3px solid green;
-  padding: 10px;
-  background-color: yellow; 
-} img{
-    max-width: 200px;
-    height: 200px;
+    width: 40%;
+    border: 3px solid green;
+    padding: 10px;
+} 
+.formularionombre img{
+    float: right;
+    width: 220px;
+    height: 220px;
 }

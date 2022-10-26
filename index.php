@@ -12,7 +12,8 @@
 </head>
 <body>
     <h1>Ejercicios PHP</h1>
-    <a href="ejercicios.php">Para ir a ejercicios de arrays</a>
+    <a href="ejercicios.php">Ir a ejercicios de arrays</a><br>
+    <a href="mysql.php">Ir a pagina de mysql</a><br>
     <?php if (!isset($_SESSION['contador'])){
         echo "Bienvenido por primera vez";
         $_SESSION['contador']=1;

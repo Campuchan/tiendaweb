@@ -15,8 +15,10 @@ echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->c
 else{
 echo $mysqli->host_info . "<br>";
 }
-$mysqli->close();
-echo "Cerrada la conexión";
+if ($resultado = $mysqli->real_query("SELECT * FROM Persona")){
+printf("La selección devolvió %d filas.\n", $resultado->num_rows);
+echo($resultado);}
+
 ?>
 </body>
 </html>

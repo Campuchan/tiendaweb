@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hola</title>
-    <link rel="icon" href="icono.ico">
+    <link rel="icon" href="img/icono.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <?php session_start();?>
 </head>
@@ -41,7 +41,7 @@
                             <h2 class="fw-bold mb-0 fs-2">Crear tremenda carta de halloween</h2>
                           </div>
                         <div class="modal-body p-5 pt-0">
-                            <form action="resultado.php" method="post">
+                            <form action="resultado.php" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control rounded-3" id="name" placeholder="Spooky" name="name" required>
                                     <label for="name">Nombre</label>
@@ -51,13 +51,13 @@
                                     <label for="surname">Apellidos</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="genero" value="Masculino" required>
+                                    <input class="form-check-input" type="radio" name="genero" id="Masculino" value="Masculino" required>
                                     <label class="form-check-label" for="Masculino">
                                         Masculino
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="genero" value="Femenino">
+                                    <input class="form-check-input" type="radio" name="genero" id="Femenino" value="Femenino">
                                     <label class="form-check-label" for="Femenino">
                                         Femenino
                                     </label>
@@ -67,7 +67,7 @@
                                     <label class="form-check-label" for="Otro">
                                         Otro
                                     </label>
-                                    <input type="text" class="form-control rounded-3" style="width:60%" id="otrotext" name="otrotexto"> </label>
+                                    <input type="text" class="form-control rounded-3" id="otrotext" name="otrotexto"> </label>
                                 </div>
                                 <div class="form-group">
                                     <label for="nacimiento"> Nacimiento <br>
